@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    int i, len, flag = 1;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    for(i = 0; str[i]!= '\0'; i++)
+        if(str[i] == '\n')
+            str[i] = '\0';
+    len = strlen(str);
+    for(i = 0; i < len/2; i++) {
+        if(str[i]!= str[len-1-i])
+            flag = 0;
+    }
+    if(flag)
+        printf("Palindrome :\n");
+    else
+        printf("Not a Palindrome :\n");
+
+    return 0;
+}
